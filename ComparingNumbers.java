@@ -28,6 +28,8 @@ public class ComparingNumbers {
 		}
 		if ( first != second ){
 			System.out.println( first + " is not equal to " + second );
+			System.out.println( "Hey.");
 		}
+
 	}
 }
