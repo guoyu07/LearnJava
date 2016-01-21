@@ -3,6 +3,7 @@ import java.util.Scanner;
 import javax.xml.bind.DatatypeConverter;
 
 public class PasswordDigest {
+	
 	public static void main( String[] args ) throws Exception {
 		Scanner keyboard = new Scanner(System.in);
 
