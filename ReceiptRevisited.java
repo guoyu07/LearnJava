@@ -1,9 +1,20 @@
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class ReceiptRevisited {
-	public static void main ( String[] args )
-	throws Exception {
-		PrintWriter fileout = new PrintWriter("receipt.txt");
+	public static void main ( String[] args ){
+	
+		PrintWriter fileout;
+
+		try {
+			fileout = new PrintWriter("receipt.txt");
+		}
+		catch ( IOException err ) {
+			System.out.println("Sorry, I can't open 'receipt.txt' for writing");
+			System.out.println("Maybe the file exists and is read-only?");
+			fileout = null;
+			System.exit(1);
+		}
 
 		fileout.println( "+-----------------------+");
 		fileout.println( "|                       |");
@@ -17,5 +28,5 @@ public class ReceiptRevisited {
 		fileout.println( "|                       |");
 		fileout.println( "+-----------------------+");
 		fileout.close();
+	  }
 	}
-}
