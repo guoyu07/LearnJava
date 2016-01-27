@@ -18,6 +18,10 @@ public class RudeQuestions{
 		System.out.print("How much do you weigh, " + name + "? ");
 		weight = keyboard.nextDouble();
 
+		System.out.println( weight +"! Better keep that quiet!!");
+		System.out.print("Finally, what's your income, " + name + "?")
+		income = keyboard.nextDouble();
+
 		System.out.print("Hopefully that is " + income + " per hour");
 		System.out.println(" and not per year!");
 		System.out.print("Well, thanks for answering my rude questions, ");
