@@ -1,0 +1,37 @@
+import java.io.File;
+import java.util.Scanner;
+
+public class GettingWholeFile {
+	public static void main( String[] args )
+	throws Exception {
+		int fourLetter = 0;
+		int caps = 0;
+
+		String fn1 = "some-words.txt";
+		String fn2 = "GettingWholeFile.java";
+
+		Scanner wordReader = new Scanner(new File(fn1));
+
+		while ( wordReader.hasNext() ) {
+			String w = wordReader.next();
+			if ( w.length() == 4 ) {
+				fourLetter++;
+			}
+		}
+		wordReader.close();
+
+		Scanner userInput = new Scanner(new File(fn2));
+
+		while ( userInput.hasNext() ) {
+			String token = userInput.next();
+			if ( Character.isUpperCase(token.charAt(0) ) ){
+				caps++;
+			}
+		}
+		userInput.close();
+
+		System.out.println( fourLetter + "four-letter words in " + fn1 );
+		System.out.println( caps + "words start with capital letters in " + fn2 );
+
+	}
+}
