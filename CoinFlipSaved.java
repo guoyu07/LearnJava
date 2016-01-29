@@ -72,10 +72,10 @@ public class CoinFlipSaved {
 
 		// Save this name and high score to the text file.
 
-		PrintWriter out = new PrintWriter(f);
-			out.println(bestName);
-			out.println(best);
-		out.close();
+		PrintWriter write = new PrintWriter(f);
+			write.println(bestName);
+			write.println(best);
+		write.close();
 
 
   }
