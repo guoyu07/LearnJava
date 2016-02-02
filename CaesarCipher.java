@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.PrintWriter;
 
 public class CaesarCipher {
 	/** 
@@ -23,19 +25,29 @@ public class CaesarCipher {
 		return (char)u;
 	}
 
-	public static void main( String[] args ) {
+	public static void main( String[] args )
+	 throws Exception  {
 		Scanner keyboard = new Scanner(System.in);
 		String plaintext, cipher = "";
 		int shift;
 
-		System.out.print("Message: ");
-		plaintext = keyboard.nextLine();
-		System.out.print("Shift (0-26): ");
-		shift = keyboard.nextInt();
+		Scanner fileIn = new Scanner( new File("read_cipher_file.txt") );
+		plaintext = fileIn.nextLine();
+		shift = fileIn.nextInt();
+		fileIn.close();
+
+		System.out.println("Encrypting message " + plaintext );
+		System.out.println("Shifting: " + shift );
 
 		for ( int i = 0; i < plaintext.length(); i++ ) {
-			cipher += shiftLetter(plaintext.charAt(i), shift);
+			cipher += shiftLetter(cipher.charAt(i), shift);
 		}
-		System.out.println( cipher );
+
+		}
+
+
+	
+
+
+		//System.out.println( cipher );
 	}
-}
