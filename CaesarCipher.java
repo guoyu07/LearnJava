@@ -25,13 +25,12 @@ public class CaesarCipher {
 		return (char)u;
 	}
 
-	public static void main( String[] args )
-	 throws Exception  {
+	public static void main( String[] args ) throws Exception  {
 		Scanner keyboard = new Scanner(System.in);
 		String plaintext, cipher = "";
 		int shift;
 
-		Scanner fileIn = new Scanner( new File("read_cipher_file.txt") );
+		Scanner fileIn = new Scanner(new File("read_cipher_file.txt"));
 		plaintext = fileIn.nextLine();
 		shift = fileIn.nextInt();
 		fileIn.close();
@@ -40,14 +39,11 @@ public class CaesarCipher {
 		System.out.println("Shifting: " + shift );
 
 		for ( int i = 0; i < plaintext.length(); i++ ) {
-			cipher += shiftLetter(cipher.charAt(i), shift);
+			cipher += shiftLetter(plaintext.charAt(i), shift);
 		}
 
-		}
+	}
 
 
-	
 
-
-		//System.out.println( cipher );
 	}
