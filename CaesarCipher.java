@@ -42,6 +42,10 @@ public class CaesarCipher {
 			cipher += shiftLetter(plaintext.charAt(i), shift);
 		}
 
+		PrintWriter fileOut = new PrintWriter(new File("store_cipher_file.txt"));
+		fileOut.println(cipher);
+		fileOut.close();
+
 	}
 
 
