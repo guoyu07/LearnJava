@@ -16,7 +16,6 @@ public class NestingLoops {
 			for ( int b = 1; b <= 3; b++ ){
 				System.out.println( "(" + a + "," + b + ") " );
 			}
-
 			// Add a line of code here
 			System.out.println();
 		}
