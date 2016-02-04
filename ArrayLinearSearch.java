@@ -24,6 +24,9 @@ public class ArrayLinearSearch {
 			if ( num == toFind ){
 				System.out.println( num + " found.");
 			}
+			else {
+				System.out.println(" We couldn't find any order with that number");
+			}
 		}
 	}
 }
