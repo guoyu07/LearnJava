@@ -20,7 +20,6 @@ public class ItemNotFound {
 				System.out.println("That is one of them!");
 				found = true;
 			  }
-
 		    }
 			if ( found == false ) {
 			  System.out.println("Sorry, that is not one of them.");
