@@ -75,7 +75,7 @@ public class ArraySlotAccess {
 		}
 
 		System.out.print("Values: ");
-		for (int q=0; q < arr.length; q++){
+		for (int q = 0; q < arr.length; q++){
 			System.out.print(arr[q] + " ");
 		}
 		System.out.println();
