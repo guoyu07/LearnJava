@@ -9,6 +9,7 @@ throws Exception {
 	
 	System.out.println( temps.length + " temperatures in database.");
 	double lowest = 9999.99;
+	double highest;
 
 	for ( int i = 0; i < temps.length; i++ ){
 		if ( temps[i] < lowest ) {
@@ -18,6 +19,9 @@ throws Exception {
 
 	System.out.print( "The lowest average daily temperature was " );
 	System.out.println( lowest + "F (" + fToC(lowest) + "C)" );
+
+	System.out.print( "The highest average daily temperature was ");
+	System.out.println( highest + "F (" + fToC(highest) + "C)" );
  }
 
  public static double[] arrayFromUrl(String url) 
