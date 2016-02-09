@@ -9,11 +9,17 @@ throws Exception {
 	
 	System.out.println( temps.length + " temperatures in database.");
 	double lowest = 9999.99;
-	double highest;
+	double highest = 0;
 
 	for ( int i = 0; i < temps.length; i++ ){
 		if ( temps[i] < lowest ) {
 			lowest = temps[i];
+		}
+	}
+
+	for ( int i = 0; i < temps.length; i++ ){
+		if ( temps[i] > highest ) {
+			highest = temps[i];
 		}
 	}
 
