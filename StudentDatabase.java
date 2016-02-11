@@ -30,12 +30,12 @@ public class StudentDatabase {
 			System.out.println("\tGPA: " + db[i].gpa + "\n");
 		}
 
-		int maxLoc = 0;
+		int highestAverage = 0;
 		for ( int i = 1; i < db.length; i++ ){
-			if ( db[i].gpa > db[maxLoc].gpa ){
-				maxLoc = i;
+			if ( db[i].gpa > db[highestAverage].gpa ){
+				highestAverage = i;
 			}
 		}
-		System.out.println(db[maxLoc].name + " has the highest GPA.");
+		System.out.println(db[highestAverage].name + " has the highest GPA.");
 	}
 }
