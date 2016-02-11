@@ -11,15 +11,20 @@ public class ActorList {
 	public static void main(String[] args)
 	throws Exception {
 		String url = "https://learnjavathehardway.org/txt/s01e01-cast.txt";
+		int counter;
 
 		Scanner inFile = new Scanner((new URL(url)).openStream());
 
+
+		counter = 0;
 		while ( inFile.hasNext() ) {
 			Actor a = getActor(inFile);
+			counter += 1;
 			System.out.print(a.name + " was born on " + a.birthdate);
 			System.out.println(" and played " + a.role);
 		}
 		inFile.close();
+		System.out.println(counter + " " + "records processed");
 	}
 
 	public static Actor getActor( Scanner input ){
