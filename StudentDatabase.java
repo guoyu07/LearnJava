@@ -36,6 +36,14 @@ public class StudentDatabase {
 				highestAverage = i;
 			}
 		}
+
+		int fewestCredits = 0;
+		for ( int i = 1; i < db.length; i++ ){
+			if ( db[i].credits < db[fewestCredits].credits ){
+				fewestCredits = i;
+			}
+		}
 		System.out.println(db[highestAverage].name + " has the highest GPA.");
+		System.out.println(db[fewestCredits].name + " has the fewest credits.");
 	}
 }
