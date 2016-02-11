@@ -27,11 +27,17 @@ public class MailingAddresses {
 		three.state = "NC";
 		three.zip = 28601;
 
+		System.out.println();
+
 		System.out.println( one.street );
 		System.out.println( one.city + ", " + one.state + " " + one.zip );
 
+		System.out.println();
+
 		System.out.println( two.street );
 		System.out.println( two.city + ", " + two.state + " " + two.zip );
+
+		System.out.println();
 
 		System.out.println( three.street );
 		System.out.println( three.city + ", " + three.state + " " + three.zip );
