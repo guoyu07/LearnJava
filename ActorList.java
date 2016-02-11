@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.net.URL;
 
 class Actor {
 	public String name;
@@ -11,7 +12,7 @@ public class ActorList {
 	throws Exception {
 		String url = "https://learnjavathehardway.org/txt/s01e01-cast.txt";
 
-		Scanner inFile = new Scanner((new java.net.URL(url)).openStream());
+		Scanner inFile = new Scanner((new URL(url)).openStream());
 
 		while ( inFile.hasNext() ) {
 			Actor a = getActor(inFile);
