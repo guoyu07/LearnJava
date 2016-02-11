@@ -1,3 +1,4 @@
+//This is essentially a record or struct.
 class Address {
  	public String street;
  	public String city;
