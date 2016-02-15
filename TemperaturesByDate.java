@@ -49,9 +49,17 @@ public class TemperaturesByDate {
 			avg = roundToOneDecimal(avg);
 			System.out.print("Average daily temperature over " + count);
 			System.out.println(" days in November: " + avg);
+
+			for (TemperatureSample record : tempDB){
+				if ( !record.equals(null) ){
+					System.out.println(record);
+				}
+			}
 		}
 
-	 public static double roundToOneDecimal( double d ){
-			return Math.round(d*10)/10.0;
+	public static double roundToOneDecimal( double d ){
+	  return Math.round(d*10)/10.0;
 	}
+
+
 }
