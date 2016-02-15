@@ -50,11 +50,16 @@ public class TemperaturesByDate {
 			System.out.print("Average daily temperature over " + count);
 			System.out.println(" days in November: " + avg);
 
+		try {
 			for (TemperatureSample record : tempDB){
 				if ( !record.equals(null) ){
 					System.out.println(record);
 				}
+			  }
 			}
+		catch (NullPointerException n ) {
+			System.out.println("A null record was detected.");
+		  }
 		}
 
 	public static double roundToOneDecimal( double d ){
