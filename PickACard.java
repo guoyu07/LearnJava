@@ -52,9 +52,9 @@ public class PickACard {
 
 	public static void displayDeck( Card[] deck ){
 		for ( Card c : deck ){
-		System.out.println(c.value + "\t" + c);
+			System.out.println(c.value + "\t" + c);
+		}
 	}
-}
 
 
 }
