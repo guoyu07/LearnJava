@@ -56,5 +56,9 @@ public class PickACard {
 		}
 	}
 
+	public static void shuffleDeck( Card[] deck ){
+		// add code/loops here
+	}
+
 
 }
