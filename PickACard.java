@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class Card {
 	int value;
 	String suit;
@@ -54,10 +56,16 @@ public class PickACard {
 		for ( Card c : deck ){
 			System.out.println(c.value + "\t" + c);
 		}
+
 	}
 
 	public static void shuffleDeck( Card[] deck ){
-		// add code/loops here
+		// try implementing a version of Fisher-Yates shuffle
+		Random rndm = new Random();
+		for (int i = deck.length - 1; i >= 0; i--){
+			int s = rndm.nextInt(i+1);
+			// Swap values below
+		}
 	}
 
 
