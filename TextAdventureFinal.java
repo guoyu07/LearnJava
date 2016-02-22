@@ -49,7 +49,7 @@ public class TextAdventureFinal {
 				file = new Scanner(new File(filename));
 			}
 			catch ( IOException e ){
-				System.err.println("Can't open " + filename + "for reading.");
+				System.err.println("Can't open " + filename + " for reading.");
 				System.exit(1);
 			}
 
@@ -85,7 +85,7 @@ public class TextAdventureFinal {
 
 		public static Room getRoom ( Scanner f ){
 			//any rooms left in the file?
-			if (!f.hasNextInt() ){
+			if (!f.hasNextInt()){
 				return null;
 			}
 			Room r = new Room();
