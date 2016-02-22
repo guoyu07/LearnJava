@@ -40,6 +40,7 @@ public class TextAdventureFinal {
 			if ( !found ){
 				System.out.println("Sorry, I don't understand.");
 			}
+		  }
 		}
 
 		public static Room[] loadRoomsFromFile( String filename ){
@@ -67,10 +68,61 @@ public class TextAdventureFinal {
 				rooms[roomNum] = r;
 				roomNum++;
 			}
-			file.close();
-
+			//file.close();
 			return rooms;
-
 		}
-	}
+
+		public static void showAllRooms( Room[] rooms ){
+			for ( Room r: rooms ){
+				String exitString = "";
+				for (int i = 0; i < r.numExits; i++){
+					exitString += "\t" + r.exits[i] + " (" + r.destinations[i] + ")";
+					System.out.println( r.roomNumber + ") " + r.roomName );
+					System.out.println( exitString );
+				}
+			}
+		}
+
+		public static Room getRoom ( Scanner f ){
+			//any rooms left in the file?
+			if (!f.hasNextInt() ){
+				return null;
+			}
+			Room r = new Room();
+			String line;
+
+			//read in the room # for error-checking later
+			r.roomNumber = f.nextInt();
+			f.nextLine(); //skip "\n" after room
+
+			r.roomName = f.nextLine();
+
+			//read in the room's description
+			r.description = "";
+
+			while ( true ) {
+				line = f.nextLine();
+				if ( line.equals("%%") ){
+					break;
+				}
+				r.description += line +"\n";
+			}
+
+			//finally, read in the exits
+			int i = 0;
+			while ( true ) {
+				line = f.nextLine();
+				if ( line.equals("%%") ){
+					break;
+				}
+				String[] parts = line.split(":");
+				r.exits[i] = parts[0];
+				r.destinations[i] = Integer.parseInt(parts[1]);
+				i++;
+			}
+			r.numExits = i;
+
+			//should be done; return the Room
+			return r;
+		}
 }
