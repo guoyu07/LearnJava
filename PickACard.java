@@ -56,15 +56,17 @@ public class PickACard {
 		for ( Card c : deck ){
 			System.out.println(c.value + "\t" + c);
 		}
-
 	}
 
 	public static void shuffleDeck( Card[] deck ){
 		// try implementing a version of Fisher-Yates shuffle
 		Random rndm = new Random();
 		for (int i = deck.length - 1; i >= 0; i--){
-			int s = rndm.nextInt(i+1);
+			int r = rndm.nextInt(i + 1);
 			// Swap values below
+			Card swap = deck[r];
+			deck[r] = deck[i];
+			deck[i] = swap;
 		}
 	}
 
