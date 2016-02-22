@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 class Room {
 	int roomNumber;
@@ -40,6 +42,35 @@ public class TextAdventureFinal {
 			}
 		}
 
-		
+		public static Room[] loadRoomsFromFile( String filename ){
+			Scanner file = null;
+			try {
+				file = new Scanner(new File(filename));
+			}
+			catch ( IOException e ){
+				System.err.println("Can't open " + filename + "for reading.");
+				System.exit(1);
+			}
+
+			int numRooms = file.nextInt();
+			Room[] rooms = new Room[numRooms];
+
+			//initialize rooms from file
+			int roomNum = 0;
+			while ( file.hasNext() ){
+				Room r = getRoom(file);
+				if ( r.roomNumber != roomNum ){
+					System.err.print("Just read room # " + r.roomNumber);
+					System.err.println(", but " + roomNum + " was expected.");
+					System.exit(2);
+				}
+				rooms[roomNum] = r;
+				roomNum++;
+			}
+			file.close();
+
+			return rooms;
+
+		}
 	}
 }
